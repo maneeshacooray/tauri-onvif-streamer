@@ -2629,7 +2629,7 @@ dependencies = [
 [[package]]
 name = "onvif-discover"
 version = "0.1.0"
-source = "git+ssh://git@github.com/maneeshacooray/ip-cam-discover.git#25b2ec23cf52a743c327d7fb4587cfd8b3fbf4b5"
+source = "git+https://github.com/maneeshacooray/ip-cam-discover.git#6e357f4665cbf2295d2c4932cc65deb93ae9ac7e"
 dependencies = [
  "anyhow",
  "chrono",
