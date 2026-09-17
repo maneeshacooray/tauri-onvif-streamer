@@ -25,11 +25,7 @@ A desktop app (Tauri + React + Rust) for discovering, viewing, and controlling O
 - [Rust](https://www.rust-lang.org/tools/install) toolchain
 - [Tauri prerequisites](https://tauri.app/start/prerequisites/) for your OS
 - [mpv](https://mpv.io/) installed and on `PATH` (used to open live streams)
-
-> **Note:** `src-tauri/Cargo.toml` currently points `onvif-discover` at a local sibling path
-> (`../../84-horcery-ip-cam-discovery-rust/onvif-discover`). That crate isn't part of this repo,
-> so a fresh clone will need that dependency vendored, published, or repointed (e.g. to a git
-> source) before `cargo build` will succeed.
+- SSH access to [maneeshacooray/ip-cam-discover](https://github.com/maneeshacooray/ip-cam-discover) (private repo; `onvif-discover` is pulled from it as a git dependency)
 
 ## Getting Started
 
