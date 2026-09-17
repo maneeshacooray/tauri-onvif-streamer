@@ -22,7 +22,7 @@ tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-onvif-discover = { version = "0.1.0", path = "../../84-horcery-ip-cam-discovery-rust/onvif-discover" }
+onvif-discover = { version = "0.1.0", git = "ssh://git@github.com/maneeshacooray/ip-cam-discover.git" }
 tokio = { version = "1.50.0", features = ["full"] }
 onvif = { git = "https://github.com/lumeohq/onvif-rs.git", rev = "8f1490e", version = "0.1.0" }
 media = { git = "https://github.com/lumeohq/onvif-rs.git", rev = "8f1490e", version = "0.1.0" }
