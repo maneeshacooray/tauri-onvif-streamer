@@ -156,14 +156,18 @@ pub async fn discover_cameras(state: State<'_, AppState>) -> Result<Vec<AppDevic
 }
 
 #[tauri::command]
-pub async fn fetch_device_info(url: String) -> Result<AppDeviceInformation, String> {
-    let di = discover_get_device_info(&url).await.map_err(|e| e.to_string())?;
+pub async fn fetch_device_info(url: String, state: State<'_, AppState>) -> Result<AppDeviceInformation, String> {
+    let client = get_client(&url, &state).await?;
+    let resp = devicemgmt::get_device_information(&client, &devicemgmt::GetDeviceInformation {})
+        .await
+        .map_err(|e: transport::Error| e.to_string())?;
+
     Ok(AppDeviceInformation {
-        manufacturer: di.manufacturer.unwrap_or_default(),
-        model: di.model.unwrap_or_default(),
-        firmware_version: di.firmware_version.unwrap_or_default(),
-        serial_number: di.serial_number.unwrap_or_default(),
-        hardware_id: di.hardware_id.unwrap_or_default(),
+        manufacturer: resp.manufacturer,
+        model: resp.model,
+        firmware_version: resp.firmware_version,
+        serial_number: resp.serial_number,
+        hardware_id: resp.hardware_id,
     })
 }
 
