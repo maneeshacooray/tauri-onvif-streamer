@@ -566,18 +566,18 @@ function App() {
           <RefreshCw size={12} style={{ cursor: 'pointer' }} onClick={() => fetchPtzStatus()} />
         </div>
         <div className="dpad">
-          <button className="ptz-btn up" onMouseDown={() => ptzMove(0, 1, 0)} onMouseUp={ptzStop}><ChevronUp /></button>
-          <button className="ptz-btn left" onMouseDown={() => ptzMove(-1, 0, 0)} onMouseUp={ptzStop}><ChevronLeft /></button>
-          <button className="ptz-btn right" onMouseDown={() => ptzMove(1, 0, 0)} onMouseUp={ptzStop}><ChevronRight /></button>
-          <button className="ptz-btn down" onMouseDown={() => ptzMove(0, -1, 0)} onMouseUp={ptzStop}><ChevronDown /></button>
+          <button className="ptz-btn up" onMouseDown={() => ptzMove(0, 1, 0)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><ChevronUp /></button>
+          <button className="ptz-btn left" onMouseDown={() => ptzMove(-1, 0, 0)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><ChevronLeft /></button>
+          <button className="ptz-btn right" onMouseDown={() => ptzMove(1, 0, 0)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><ChevronRight /></button>
+          <button className="ptz-btn down" onMouseDown={() => ptzMove(0, -1, 0)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><ChevronDown /></button>
           <button className="ptz-btn home" onClick={ptzHome} title="Return to Home Position">
             <Home size={16} />
           </button>
         </div>
         <div className="ptz-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <div className="zoom-controls">
-            <button className="ptz-btn zoom-in" onMouseDown={() => ptzMove(0, 0, 1)} onMouseUp={ptzStop}><Plus /> Zoom</button>
-            <button className="ptz-btn zoom-out" onMouseDown={() => ptzMove(0, 0, -1)} onMouseUp={ptzStop}><Minus /> Zoom</button>
+            <button className="ptz-btn zoom-in" onMouseDown={() => ptzMove(0, 0, 1)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><Plus /> Zoom</button>
+            <button className="ptz-btn zoom-out" onMouseDown={() => ptzMove(0, 0, -1)} onMouseUp={ptzStop} onMouseLeave={ptzStop}><Minus /> Zoom</button>
           </div>
           <button className="glass-btn sm" onClick={() => saveOnvifPreset("Default")} title="Set Current Position as Default">
             <Fingerprint size={14} /> Set Default
