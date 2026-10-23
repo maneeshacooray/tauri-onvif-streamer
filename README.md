@@ -25,7 +25,7 @@ A desktop app (Tauri + React + Rust) for discovering, viewing, and controlling O
 - [Rust](https://www.rust-lang.org/tools/install) toolchain
 - [Tauri prerequisites](https://tauri.app/start/prerequisites/) for your OS
 - [mpv](https://mpv.io/) installed and on `PATH` (used to open live streams)
-- SSH access to [maneeshacooray/ip-cam-discover](https://github.com/maneeshacooray/ip-cam-discover) (private repo; `onvif-discover` is pulled from it as a git dependency)
+- Git HTTPS access to [maneeshacooray/ip-cam-discover](https://github.com/maneeshacooray/ip-cam-discover) (private repo; `onvif-discover` is pulled from it as a git dependency over HTTPS, so cargo/git must be configured with credentials — e.g. a credential helper or token — that can authenticate to it)
 
 ## Getting Started
 
