@@ -162,6 +162,10 @@ function App() {
     setInfo(null);
     setStreamUri("");
     setSnapshotUri("");
+    setVideoConfig(null);
+    setPtzStatus(null);
+    setOnvifPresets([]);
+    setOsdText("");
     setStatus(`Connecting to ${cam.name || cam.address}...`);
 
     const run = async () => {
